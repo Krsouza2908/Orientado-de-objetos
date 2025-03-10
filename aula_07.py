@@ -11,22 +11,32 @@ class ContaBancaria:
         if valorDeposito > 0:
             self.__saldo = self.__saldo + valorDeposito
             #self.__saldo += valorDeposito #forma abreviada   
-            print(f"Depósito de R$ {valorDeposito:.2f} realizado! /n")
+            print(f"Depósito de R$ {valorDeposito:.2f} realizado! \n")
         else:
             print("Valores negativos não são permitidos!")
 
     def sacar(self, valorSacado):
-            ...
+            if valorSacado > 0:
+                if valorSacado <= self.__saldo:
+                    self.__saldo = self.__saldo - valorSacado
+                    #self.__saldo -= __saldo
+                    print(f"Saque de R$ {valorSacado: .2f} realizado com suceso!")
+                else:
+                    print("Saldo insuficiente para saque")
+            else:
+                print("O valor do saque deve ser positivo")    
 
     def mostrar_saldo(self):
-        ...
+        print(f"saldo atual R$ {self.__saldo: .2f}")
 
-#Criar intância para akimentar a classe
+#Criar intância para alimentar a classe
 conta = ContaBancaria()
 
-valor_depositado = float(input("Informe o valor do éposito R$ "))
+valor_depositado = float(input("Informe o valor do deposito R$ "))
 conta.depositar(valor_depositado)
 
-conta.mostrar_saldo()
 sacar = float(input("Informe o valor do saque R$ "))
 conta.sacar(sacar)
+
+conta.mostrar_saldo()
+
