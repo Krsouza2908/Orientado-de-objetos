@@ -1,5 +1,5 @@
 #Herança simples
-class Jogador: #Super classe/Classe mãe
+class Jogador(): #Super classe/Classe mãe
     def __init__(self, altura, velocidade, passe, dible, precicao):
         self.altura = altura
         self.velocidade = velocidade
