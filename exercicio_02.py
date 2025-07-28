@@ -1,85 +1,41 @@
-'''
-Exercicios 01 - Crie uma classe chamada ContaBancaria com os seguintes atribos e métodos: Aributo privado "saldo" iniciado em zero.
-Métodos depositar, sacar e mostrar_saldo.
-Você deve pedir para o usuario efetuar o depósito, saque e mostrar o saldo posteriormente. 
-'''
-class ContaBancaria:
-    def __init__(self):
-        self.__saldo = 0
+class Veiculo:
+    def __init__(self, marca):
+        self.marca = marca
 
-    def depositar(self, valorDeposito):
-        if valorDeposito > 0:
-            self.__saldo = self.__saldo + valorDeposito
-            #self.__saldo += valorDeposito #forma abreviada   
-            print(f"Depósito de R$ {valorDeposito:.2f} realizado! \n")
-        else:
-            print("Valores negativos não são permitidos!")
+    def ligar(self):
+        print(f"A moto da marca {self.marca} está ligada")
 
-    def sacar(self, valorSacado):
-            if valorSacado <= 500:
-                if valorSacado <= self.__saldo:
-                    self.__saldo = self.__saldo - valorSacado
-                    #self.__saldo -= __saldo
-                    print(f"Saque de R$ {valorSacado: .2f} realizado com suceso!")
-                else:
-                    print("Saldo insuficiente para saque")
-            else:
-                print("Limite de saque atingido,por favor tente novamente sacando o valor permitido" )
+    def desligar(self):    
+        print(f"A moto da marca {self.marca} está desligada")
 
-    def mostrar_saldo(self):
-        print(f"Saldo atual R$ {self.__saldo: .2f} \n")
+class Moto(Veiculo):
+    def empinar(self):
+        print(f"A moto da marca {self.marca} está empinando")
 
-#Criar intância para alimentar a classe
-conta = ContaBancaria()
 
-valor_depositado = float(input("Informe o valor do deposito R$ "))
-conta.depositar(valor_depositado)
+marca = input("Informe a marca da moto: ")
 
-conta.mostrar_saldo()
+moto1 = Moto(marca)
 
-sacar = float(input("Informe o valor do saque,sendo possivel sacar no máximo 500 reais por dia: R$ "))
-conta.sacar(sacar)
-conta.mostrar_saldo()
 
-'''
-class ContaBancaria:
-    def __init__(self):
-        self.__saldo = 0
-        self.__limite_saldo = 500
+while True:
+    print("\nO que você deseja fazeer? ")
+    print("1 - Ligar a moto")
+    print("2 - Empinar a moto")
+    print("3 - Desligar a moto")
+    print("4 - Sair")
+    opc = int(input("Escolha uma opção: "))
 
-    def depositar(self, valorDeposito):
-        if valorDeposito > 0:
-            self.__saldo = self.__saldo + valorDeposito
-            #self.__saldo += valorDeposito #forma abreviada   
-            print(f"Depósito de R$ {valorDeposito:.2f} realizado! \n")
-        else:
-            print("Valores negativos não são permitidos!")
+    if opc == 1:
+        moto1.ligar()
+    elif opc == 2:
+        moto1.empinar()
+    elif opc == 3:
+        moto1.desligar()
+    elif opc == 4:
+        print("Saindo do sistema...")
+        break
+    else:
+        print("Opção inválida!")
 
-    def sacar(self, valorSacado):
-            if valorSacado > 0:
-                if valorSacado > self.__limite_saldo:
-                    print("Limite de saque atingido,por favor tente novamente sacando o valor permitido")
-                else:    
-                    if valorSacado <= self.__saldo:
-                        self.__saldo = self.__saldo - valorSacado
-                        #self.__saldo -= __saldo
-                        print(f"Saque de R$ {valorSacado: .2f} realizado com suceso!")
-                    else:
-                        print("Saldo insuficiente para saque")
-            else:
-                print("O valor do saque deve ser positivo")    
-
-    def mostrar_saldo(self):
-        print(f"saldo atual R$ {self.__saldo: .2f}")
-
-#Criar intância para alimentar a classe
-conta = ContaBancaria()
-
-valor_depositado = float(input("Informe o valor do deposito R$ "))
-conta.depositar(valor_depositado)
-
-sacar = float(input("Informe o valor do saque R$ "))
-conta.sacar(sacar)
-
-conta.mostrar_saldo()
-'''
+        
