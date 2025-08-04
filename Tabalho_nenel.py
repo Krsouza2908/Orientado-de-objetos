@@ -27,7 +27,7 @@ class Aluno(Pessoa):
         print(f"Curso: {self.curso}")
 
 class Professor(Pessoa):
-    def __init__(self, nome, idade, cpf, rg, telefone, endereco, nf, disciplina):
+    def __init__(self, nome, idade, cpf, rg, telefone, endereco, numerofuncional, disciplina):
         super().__init__(nome, idade, cpf, rg, telefone, endereco)
         self.nf = nf
         self.disciplina = disciplina
@@ -61,16 +61,16 @@ cursoA = input("Informe seu curso: ")
 pessoa1 = Aluno(nomeA, idadeA, cpfA, rgA, telefoneA, enderecoA, raA, cursoA)
 
 
-print("\n------------Cadastro de Professor------------")
-nomeP = input("Informe seu nome: ")
-idadeP = int(input("Informe sua idade: "))
-cpfP = input("Informe o seu CPF: ")
-rgP = input("Informe seu RG: ")
-telefoneP = input("Informe seu telefone: ")
-enderecoP = input("Informe seu endereço: ")
-nfP = int(input("Informe seu número funcional: "))
-disciplinaP = input("Informe sua disciplina: ")
-pessoa2 = Professor(nomeP, idadeP, cpfP, rgP, telefoneP, enderecoP, nfP, disciplinaP)
+print("\n----------Cadastro de Professor----------")
+nomeProfessor = input("Informe seu nome: ")
+idadeProfessor = int(input("Informe sua idade: "))
+cpfProfessor = input("Informe o seu CPF: ")
+rgProfessor = input("Informe seu RG: ")
+telefoneProfessor = input("Informe seu telefone: ")
+enderecoProfessor = input("Informe seu endereço: ")
+numerofuncionalProfessor = int(input("Informe seu número funcional: "))
+disciplinaProfessor = input("Informe sua disciplina: ")
+    pessoa2 = Professor(nomeProfessor, idadeProfessor, cpfProfessor, numerofuncionalProfessor, telefoneProfessor, enderecoProfessor, numerofuncionalProfessor, disciplinaProfessor)
 
 
 print("\n------------Cadastro de Funcionário------------")
@@ -85,13 +85,13 @@ funcaoFuncionario = input("Informe sua função: ")
 pessoa3 = Funcionario(nomeFuncionario, idadeFuncionario, cpfFuncionario, rgFuncionario, telefoneFuncionario, enderecoFuncionario, setorFuncionario, funcaoFuncionario)
 
 
-print("\n------------Dados Cadastrados------------")
+print("\n----------Dados Cadastrados----------")
 
-print("\n===== Dados cadastrados do Aluno =====")
+print("\n------Dados cadastrados do Aluno -----")
 pessoa1.mostrar_dados()
 
-print("\n===== Dados cadastrados do Professor =====")
+print("\n----- Dados cadastrados do Professor -----")
 pessoa2.mostrar_dados()
 
-print("\n===== Dados cadastrados do  Funcionário =====")
+print("\n----- Dados cadastrados do  Funcionário -----")
 pessoa3.mostrar_dados()
